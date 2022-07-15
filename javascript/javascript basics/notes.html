@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Basics</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+      integrity="sha512-thoh2veB35ojlAhyYZC0eaztTAUhxLvSZlWrNtlV01njqs/UdY3421Jg7lX0Gq9SRdGVQeL8xeBp9x1IPyL1wQ=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>JavaScript Basics</h1>
+      <hr />
+      <h2>Implicit Type Conversion</h2>
+      <p>What if we perform a math function on a string?</p>
+      <p>
+        For example if you subtract a string from another it will say NaN error
+        however if you subtract a string with a number in it ("23") from another
+        it will still perform the calculation because JS will convert the string
+        number into a number type. If you add two number strings they will
+        concatenate as a string type. Even if you add a number string to number
+        type it will still concatenate as a string type. This commonly happens
+        when a user inputs a number in number input and you do not convert the
+        value of the inputs to correct type.
+      </p>
+      <h2>Data Types</h2>
+      <p>
+        There are seven data types. Including primitive and all else are
+        objects. Primitive (string, number, boolean, null, undefined and symbol
+        (ES6)). Objects (arrays, functions and objects). You can always
+        console.log "typeof" to determine the type of a value. Null will come
+        back as typeof object even though it should be null (this is a bug since
+        a lot of code relies on null).
+      </p>
+      <!-- <h2>Function and Returns</h2>
+      <p></p> -->
+    </div>
+    <!-- ./container -->
+
+    <script>
+      console.log(`Implicit Type Conversion`);
+      let number = '24';
+      let number1 = '33';
+      const result = number + number1;
+      const result1 = number - number1;
+      console.log(result);
+      console.log(result1);
+      console.log(`________________________`);
+
+      // function greet(name) {
+      //   console.log(`Hello there ${name}`);
+      // }
+      // greet(`Evan`);
+
+      console.log(`Return Example`);
+      // create function which converts inches to cms.
+      function convert(inches) {
+        // console.log(`The converted value in cm is ${inches * 2.54} cm.`);
+        // const converted = inches * 2.54;
+        // return converted;
+        // more basic example if more complex use the above variable calculation and return of variable
+        // AFTER return no more code runs
+        return inches * 2.54;
+      }
+      const newValue = convert(2);
+      console.log(newValue);
+      console.log(`________________________`);
+
+      console.log(`Function Declaration vs Expression`);
+      // Declaration
+      function addValues(num1, num2) {
+        return num1 + num2;
+      }
+      const valueOne = addValues(3, 4);
+      const valueTwo = addValues(12, 34);
+
+      // Expression
+      const add = function (num3, num4) {
+        return num3 + num4;
+      };
+      const valueThree = add(5, 6);
+      // instead of valueThree in array you could put add(5,6)
+      // NEED to consider hoisting and arrow functions from ES6 when using expressions. Arrow functions ONLY work as expressions
+      const values = [valueOne, valueTwo, valueThree];
+      console.log(values);
+      console.log(`________________________`);
+    </script>
+  </body>
+</html>
